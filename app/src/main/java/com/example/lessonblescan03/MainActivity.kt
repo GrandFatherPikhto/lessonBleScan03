@@ -61,12 +61,12 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         lifecycleScope.launch {
-            RequestPermissions.stateFlowPermission.filterNotNull().collect { permission ->
-                Log.e(TAG, "Permission ${permission.first}, ${permission.second}")
-                if (permission.first) {
-                    Toast.makeText(baseContext, getString(R.string.message_granted_permission, permission.second), Toast.LENGTH_SHORT).show()
+            requestPermissions.stateFlowRequestPermission.filterNotNull().collect { permission ->
+                Log.e(TAG, "Permission ${permission.permission}, ${permission.granted}")
+                if (permission.granted) {
+                    Toast.makeText(baseContext, getString(R.string.message_permission_granted, permission.permission), Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(baseContext, getString(R.string.message_not_granted_permission, permission.second), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, getString(R.string.message_permission_not_granted, permission.permission), Toast.LENGTH_SHORT).show()
                     finishAndRemoveTask()
                     exitProcess(0)
                 }

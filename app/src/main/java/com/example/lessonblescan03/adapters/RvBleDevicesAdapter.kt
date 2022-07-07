@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lessonblescan03.R
+import com.example.lessonblescan03.helper.clickHandler
+import com.example.lessonblescan03.helper.longClickHandler
 import com.grandfatherpikhto.blin.BleDevice
 
 class RvBleDevicesAdapter : RecyclerView.Adapter<RvBleDeviceHolder>() {
@@ -67,6 +69,3 @@ class RvBleDevicesAdapter : RecyclerView.Adapter<RvBleDeviceHolder>() {
         handlerLongClick = longClickListener
     }
 }
-
-typealias clickHandler<T> = (T, View) -> Unit
-typealias longClickHandler<T> = (T, View) -> Unit

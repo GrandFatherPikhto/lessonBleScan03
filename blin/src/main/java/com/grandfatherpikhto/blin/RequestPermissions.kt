@@ -16,13 +16,16 @@ import kotlinx.coroutines.launch
 
 @RequiresApi(Build.VERSION_CODES.M)
 class RequestPermissions constructor(private val activity: AppCompatActivity) : DefaultLifecycleObserver {
-    companion object {
-        private val mutableStateFlowPermission = MutableStateFlow<Pair<Boolean, String>?>(null)
-        val stateFlowPermission get() = mutableStateFlowPermission.asStateFlow()
-        val valuePermission get() = mutableStateFlowPermission.value
-    }
+    private val logTag = this.javaClass.simpleName
 
-    private val requestedPermissions = mutableListOf<Pair<Boolean, String>>()
+    private val mutableStateFlowRequestPermission =
+        MutableStateFlow<RequestPermission?>(null)
+    val stateFlowRequestPermission get() = mutableStateFlowRequestPermission.asStateFlow()
+    val valueRequestPermission get() = mutableStateFlowRequestPermission.value
+
+    private val requestPermissions: MutableList<RequestPermission> = mutableListOf()
+
+    private var currentRequestPermission: String = ""
 
     /**
      * Запрос группы разрешений
@@ -31,38 +34,46 @@ class RequestPermissions constructor(private val activity: AppCompatActivity) : 
      * В противном случае, будет ошибка запроса, если мы вздумаем
      * перезапросить разрешения после запуска полного запуска приложения
      */
-    private val permissionsLauncher =
-        activity.registerForActivityResult(
-            ActivityResultContracts.RequestMultiplePermissions()) { results ->
-            results?.entries?.forEach { result ->
-                val name = result.key
-                val granted = result.value
-                mutableStateFlowPermission.tryEmit(Pair(granted, name))
-            }
-        }
-
-    fun requestPermissions(permissions: List<String> = listOf()) {
-        val requestPermissions = mutableListOf<String>()
-
-        permissions.forEach { permission ->
-            if(activity.checkSelfPermission(permission)
-                != PackageManager.PERMISSION_GRANTED
-            ) {
-                requestPermissions.add(permission)
-            }
-        }
-
-        if(requestPermissions.isNotEmpty()) {
-            permissionsLauncher.launch(requestPermissions.toTypedArray())
+    private val launcherMultiplePermissions = activity.registerForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()) { results ->
+        results?.forEach { result ->
+            addResult(RequestPermission(result.key, result.value))
         }
     }
 
-    init {
-        requestedPermissions.clear()
-        CoroutineScope(Dispatchers.IO).launch {
-            stateFlowPermission.filterNotNull().collect { permission ->
-                requestedPermissions.add(permission)
+    private val launcherPermission = activity.registerForActivityResult(
+        ActivityResultContracts.RequestPermission()) { granted ->
+        addResult(RequestPermission(currentRequestPermission, granted))
+    }
+
+    private fun addResult(requestPermission: RequestPermission) {
+        mutableStateFlowRequestPermission
+            .tryEmit(requestPermission)
+        if ( !requestPermissions.contains(requestPermission)) {
+            requestPermissions.add(requestPermission)
+            mutableStateFlowRequestPermission.tryEmit(requestPermission)
+        }
+    }
+
+    fun requestPermission(permission: String) {
+        if ( activity.checkSelfPermission(permission)
+            != PackageManager.PERMISSION_GRANTED ) {
+            currentRequestPermission = permission
+            launcherPermission.launch(permission)
+        }
+    }
+
+    fun requestPermissions(permissions: List<String>) {
+        val requesting = mutableListOf<String>()
+        permissions.forEach { permission ->
+            if (activity.checkSelfPermission(permission)
+                != PackageManager.PERMISSION_GRANTED) {
+                requesting.add(permission)
             }
+        }
+
+        if (requesting.isNotEmpty()) {
+            launcherMultiplePermissions.launch(requesting.toTypedArray())
         }
     }
 }

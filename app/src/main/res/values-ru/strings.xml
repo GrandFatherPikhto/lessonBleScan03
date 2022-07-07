@@ -15,4 +15,6 @@
     <string name="action_start_scan">Сканировать</string>
     <string name="action_stop_scan">Остановить сканирование</string>
     <string name="description_paired">Сопряжено или не сопряжено устройство</string>
+    <string name="message_permission_granted">Разрешение на %1$s получено</string>
+    <string name="message_permission_not_granted">Разрешение на %1$s не получено</string>
 </resources>

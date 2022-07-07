@@ -17,4 +17,6 @@
     <string name="action_start_scan">Start Scan</string>
     <string name="action_stop_scan">Stop Scan</string>
     <string name="description_paired">Paired or non paired BLE device</string>
+    <string name="message_permission_granted">Permission %1$s is granted</string>
+    <string name="message_permission_not_granted">Permission %1$s is not granted</string>
 </resources>
