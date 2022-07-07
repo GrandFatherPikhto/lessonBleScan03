@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">lessonBleScan03</string>
+    <string name="action_settings">Настройки</string>
+    <string name="scan_fragment_label">Сканирование</string>
+    <string name="second_fragment_label">BLE Устройство</string>
+    <string name="next">Вперёд</string>
+    <string name="previous">Назад</string>
+    <string name="hello_first_fragment">Привет, первый фрагмент</string>
+    <string name="hello_second_fragment">Привет, второй фрагмент. Аргумент: %1$s</string>
+    <string name="message_not_granted_permission">Разрешение на %1$s не получено</string>
+    <string name="message_granted_permission">Разрешение на %1$s получено</string>
+    <string name="ble_device_name">Имя BLE Устройства</string>
+    <string name="ble_default_device_name">Неизвестное устройство</string>
+    <string name="action_start_scan">Сканировать</string>
+    <string name="action_stop_scan">Остановить сканирование</string>
+    <string name="description_paired">Сопряжено или не сопряжено устройство</string>
+</resources>

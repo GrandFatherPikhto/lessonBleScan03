@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">lessonBleScan03</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="scan_fragment_label">Scan</string>
+    <string name="second_fragment_label">Device</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="message_not_granted_permission">Permission %1$s is not granted</string>
+    <string name="message_granted_permission">Permission %1$s is granted</string>
+    <string name="ble_device_name">BLE Device Name</string>
+    <string name="ble_default_device_name">Unknown Device</string>
+    <string name="ble_default_device_address" translatable="false">00:00:00:00:00:00</string>
+    <string name="action_start_scan">Start Scan</string>
+    <string name="action_stop_scan">Stop Scan</string>
+    <string name="description_paired">Paired or non paired BLE device</string>
+</resources>
