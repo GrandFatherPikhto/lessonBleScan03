@@ -43,7 +43,7 @@ class MainActivityTest {
     }
 
     @Test(timeout = 10000)
-    fun scanWithEmulator() {
+    fun scanTwoDevicesAndClickDevice() {
         val devices = mutableListOf<BluetoothDevice>()
         CoroutineScope(Dispatchers.IO).launch {
             BleScanManager.stateFlowDevice.filterNotNull().collect { device ->
