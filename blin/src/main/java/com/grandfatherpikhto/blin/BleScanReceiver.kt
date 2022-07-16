@@ -30,7 +30,7 @@ class BleScanReceiver : BroadcastReceiver() {
 
         @SuppressLint("UnspecifiedImmutableFlag")
         fun getBroadcast(context: Context, requestCode: Int): PendingIntent {
-            Log.e(TAG, "getBroadcast()")
+            Log.e(TAG, "getBroadcast(requestCode = $requestCode, flag = ${PendingIntent.FLAG_UPDATE_CURRENT})")
             return PendingIntent.getBroadcast(
                 context,
                 requestCode,
