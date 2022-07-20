@@ -1,4 +1,4 @@
-package com.example.lessonblescan03
+package com.grandfatherpikhto.lessonblescan03
 
 import android.bluetooth.BluetoothDevice
 import android.os.Bundle
@@ -12,11 +12,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.lessonblescan03.adapters.RvBleDevicesAdapter
-import com.example.lessonblescan03.adapters.RvClickItemListener
+import com.example.lessonblescan03.R
+import com.grandfatherpikhto.lessonblescan03.adapters.RvBleDevicesAdapter
+import com.grandfatherpikhto.lessonblescan03.adapters.RvClickItemListener
 import com.example.lessonblescan03.databinding.FragmentScanBinding
-import com.example.lessonblescan03.models.MainActivityViewModel
-import com.example.lessonblescan03.models.ScanViewModel
+import com.grandfatherpikhto.lessonblescan03.models.MainActivityViewModel
+import com.grandfatherpikhto.lessonblescan03.models.ScanViewModel
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch
 

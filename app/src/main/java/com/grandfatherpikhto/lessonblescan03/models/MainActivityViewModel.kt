@@ -1,4 +1,4 @@
-package com.example.lessonblescan03.models
+package com.grandfatherpikhto.lessonblescan03.models
 
 import android.bluetooth.BluetoothDevice
 import androidx.lifecycle.ViewModel

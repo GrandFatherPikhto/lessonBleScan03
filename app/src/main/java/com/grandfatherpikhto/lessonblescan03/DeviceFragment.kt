@@ -1,4 +1,4 @@
-package com.example.lessonblescan03
+package com.grandfatherpikhto.lessonblescan03
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.lessonblescan03.R
 import com.example.lessonblescan03.databinding.FragmentDeviceBinding
-import com.example.lessonblescan03.models.MainActivityViewModel
+import com.grandfatherpikhto.lessonblescan03.models.MainActivityViewModel
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.

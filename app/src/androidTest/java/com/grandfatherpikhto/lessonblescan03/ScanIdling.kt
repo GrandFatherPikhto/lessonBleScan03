@@ -1,4 +1,4 @@
-package com.example.lessonblescan03
+package com.grandfatherpikhto.lessonblescan03
 
 import androidx.test.espresso.IdlingResource
 import java.util.concurrent.atomic.AtomicBoolean

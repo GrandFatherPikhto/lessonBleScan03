@@ -1,4 +1,4 @@
-package com.example.lessonblescan03
+package com.grandfatherpikhto.lessonblescan03
 
 import org.junit.Test
 

@@ -5,7 +5,7 @@
     android:id="@+id/clDeviceInfo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeviceFragment">
+    tools:context="com.grandfatherpikhto.lessonblescan03.DeviceFragment">
 
     <TextView
         android:id="@+id/tvDeviceName"

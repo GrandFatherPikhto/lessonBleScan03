@@ -1,4 +1,4 @@
-package com.example.lessonblescan03
+package com.grandfatherpikhto.lessonblescan03
 
 import android.os.Bundle
 import android.util.Log
@@ -13,9 +13,10 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.example.lessonblescan03.R
 import com.example.lessonblescan03.databinding.ActivityMainBinding
-import com.example.lessonblescan03.models.MainActivityViewModel
-import com.example.lessonblescan03.models.ScanViewModel
+import com.grandfatherpikhto.lessonblescan03.models.MainActivityViewModel
+import com.grandfatherpikhto.lessonblescan03.models.ScanViewModel
 import com.grandfatherpikhto.blin.BleApplication
 import com.grandfatherpikhto.blin.BleScanManager
 import com.grandfatherpikhto.blin.RequestPermissions

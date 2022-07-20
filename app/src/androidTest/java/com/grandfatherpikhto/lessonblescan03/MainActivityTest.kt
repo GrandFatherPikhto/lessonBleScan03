@@ -1,4 +1,4 @@
-package com.example.lessonblescan03
+package com.grandfatherpikhto.lessonblescan03
 
 import android.bluetooth.BluetoothDevice
 import android.content.Context
@@ -10,6 +10,7 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.lessonblescan03.R
 import com.grandfatherpikhto.blin.BleScanManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

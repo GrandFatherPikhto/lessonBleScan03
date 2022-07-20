@@ -1,4 +1,4 @@
-package com.example.lessonblescan03.adapters
+package com.grandfatherpikhto.lessonblescan03.adapters
 
 import android.bluetooth.BluetoothDevice
 import android.view.View

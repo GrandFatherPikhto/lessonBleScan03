@@ -1,4 +1,4 @@
-package com.example.lessonblescan03.adapters
+package com.grandfatherpikhto.lessonblescan03.adapters
 
 import android.bluetooth.BluetoothDevice
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lessonblescan03.R
-import com.example.lessonblescan03.helper.clickHandler
-import com.example.lessonblescan03.helper.longClickHandler
+import com.grandfatherpikhto.lessonblescan03.helper.clickHandler
+import com.grandfatherpikhto.lessonblescan03.helper.longClickHandler
 import com.grandfatherpikhto.blin.BleDevice
 
 class RvBleDevicesAdapter : RecyclerView.Adapter<RvBleDeviceHolder>() {
